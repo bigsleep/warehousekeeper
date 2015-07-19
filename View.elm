@@ -28,8 +28,12 @@ render rs {userState, warehouseMap, destinations, gameStatus} =
             if gameStatus == WarehouseKeeper.Cleared
                 then Element.width w << Element.centered << Text.fromString <| "game cleared"
                 else Element.empty
+        sourceLink =
+            let url = "https://github.com/bigsleep/warehousekeeper"
+                e = Element.width w << Element.centered << Text.fromString <| "source code"
+            in Element.link url e
         v = Element.color Color.yellow <| Collage.collage w h (List.append u m)
-    in Element.flow Element.down [v, explanation, status]
+    in Element.flow Element.down [v, explanation, status, sourceLink]
 
 renderMap : RenderSetting -> WarehouseKeeper.WarehouseMap -> List (Int, Int) -> List Collage.Form
 renderMap rs m ds =

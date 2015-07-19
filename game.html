@@ -10392,7 +10392,7 @@ Elm.View.make = function (_elm) {
                                                ,_1: $Basics.toFloat(oy - _v0._1 * u)});
               }();}
          _U.badCase($moduleName,
-         "between lines 60 and 62");
+         "between lines 64 and 66");
       }();
    });
    var renderUser = F2(function (rs,
@@ -10434,10 +10434,10 @@ Elm.View.make = function (_elm) {
                           case "TileWall":
                           return wallForm;}
                        _U.badCase($moduleName,
-                       "between lines 42 and 46");
+                       "between lines 46 and 50");
                     }());}
                _U.badCase($moduleName,
-               "between lines 41 and 46");
+               "between lines 45 and 50");
             }();
          });
          var tiles = $Dict.values($Dict.map(renderTile)(m));
@@ -10453,7 +10453,7 @@ Elm.View.make = function (_elm) {
                     ,_1: _v10._1},
                     destForm);}
                _U.badCase($moduleName,
-               "on line 48, column 13 to 37");
+               "on line 52, column 13 to 37");
             }();
          };
          var dests = A2($List.map,
@@ -10480,6 +10480,13 @@ Elm.View.make = function (_elm) {
             var explanation = $Graphics$Element.width(w)($Graphics$Element.centered($Text.fromString("restart: space key")));
             var status = _U.eq(_v14.gameStatus,
             $WarehouseKeeper.Cleared) ? $Graphics$Element.width(w)($Graphics$Element.centered($Text.fromString("game cleared"))) : $Graphics$Element.empty;
+            var sourceLink = function () {
+               var e = $Graphics$Element.width(w)($Graphics$Element.centered($Text.fromString("source code")));
+               var url = "https://github.com/bigsleep/warehousekeeper";
+               return A2($Graphics$Element.link,
+               url,
+               e);
+            }();
             var v = $Graphics$Element.color($Color.yellow)(A3($Graphics$Collage.collage,
             w,
             h,
@@ -10488,7 +10495,8 @@ Elm.View.make = function (_elm) {
             $Graphics$Element.down,
             _L.fromArray([v
                          ,explanation
-                         ,status]));
+                         ,status
+                         ,sourceLink]));
          }();
       }();
    });
